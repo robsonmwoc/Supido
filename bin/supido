@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+$:.push File.expand_path("../../lib", __FILE__)
+
+raise "Soon... O_O"
+
+require 'supido'
+require 'optparse'
+require 'shellwords'
+
+unless ARGV.delete("--noenv")
+  if File.exist?(path = "./.sprocketsrc")
+    rcflags = Shellwords.split(File.read(path))
+    ARGV.unshift(*rcflags)
+  end
+end
+
+# filenames = []
+# environment = Supido::Environment.new(Dir.pwd)
+
+# (ENV['SUPIDO_PATH'] || "").split(File::PATH_SEPARATOR).each do |path|
+#   environment.append_path path
+# end
+
+OptionParser.new do |opts|
+  opts.summary_width = 28
+  opts.banner = "Usage: supido [options] profile [profile ...]"
+
+  def opts.show_usage
+    puts self
+    exit 1
+  end
+
+  opts.on("-r", "--tool COMMAND", "Define which command should be used (ApacheBenchmark or HTTPerf)") do |lib|
+    require lib
+  end
+
+  opts.on_tail("-h", "--help", "Shows this help message") do
+    opts.show_usage
+  end
+
+  opts.on_tail("-v", "--version", "Shows version") do
+    puts Supido::VERSION
+    exit
+  end
+
+  opts.show_usage if ARGV.empty?
+
+  begin
+    opts.order(ARGV) do |filename|
+      filenames << File.expand_path(filename)
+    end
+  rescue OptionParser::ParseError => e
+    opts.warn e.message
+    opts.show_usage
+  end
+end
+
+# Execute profiles...
