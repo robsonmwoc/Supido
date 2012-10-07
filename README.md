@@ -1,5 +1,8 @@
 # Supido
 
+** This gem is under intensive development, as soon as I can make it stable I
+will warning you.
+
 Supido (pronouces speedo) is the Japanese word for Speed.
 
 Supido is a profiling tool integrated to Apache Benchmark (ab) to help you
@@ -25,6 +28,9 @@ Or install it yourself as:
     $ gem install supido
 
 ## Usage
+
+**This description is not good enough.** Soon I will provide a command line 
+generator, and a easy way to execute your profiles using Supido.
 
 It's very simple to use the Supido performance. A example case is to 
 simulate a profile usage where a group of 100 requests, with concurrency of 5 
