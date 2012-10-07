@@ -17,7 +17,7 @@ module Supido
   end
 
   configure do |config|
-    config.benchmark_tool = ApacheBenchmark
+    config.benchmark_tool = Tools::ApacheBenchmark
     config.log_path = "/tmp"
   end
 

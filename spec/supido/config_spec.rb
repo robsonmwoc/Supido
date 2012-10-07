@@ -6,7 +6,7 @@ describe Supido::Configuration do
   context "default settings" do
     it "should the benchmark_tool default value be" do
       benchmark_tool = config.benchmark_tool.new
-      benchmark_tool.is_a?(::Supido::ApacheBenchmark).should be_true
+      benchmark_tool.is_a?(::Supido::Tools::ApacheBenchmark).should be_true
     end
 
     it "should the log_path default value be" do
