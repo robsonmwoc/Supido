@@ -1,6 +1,6 @@
 # Supido
 
-** This gem is under intensive development, as soon as I can make it stable I
+**This gem is under intensive development, as soon as I can make it stable I
 will warning you.**
 
 Supido (pronouces speedo) is the Japanese word for Speed.
