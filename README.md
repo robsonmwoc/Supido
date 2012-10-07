@@ -54,8 +54,12 @@ at same time. The description code would be like this:
     profile.run!
 
 ## Actions Paramethers
-  action.attachment = File.open("/path/to/file", "r")
-  action.content_type = "multipart/form-data;bondary"
+
+  action.attachment = {
+                        filename: "image.jpg",
+                        content_type: "image/jpeg",
+                        filepath: "/path/to/file"
+                      }
 
 ## ROADMAP
 
@@ -65,12 +69,12 @@ the open issues I will be updating this Roadmap.
 What I want to achieve with the final release is integration with test tools,
 such as TestUnit, MiniTest and Rspec. Until then, there is a lot of work to be 
 done.
+
 ### Version 0.1
 
 * Update the documentation
 * Write rdocs
 * Write the analytics inspector of ab reports
-* Write tests!!
 
 ### Version 0.2
 
