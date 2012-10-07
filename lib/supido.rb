@@ -7,6 +7,7 @@ require 'uri'
 module Supido; end
 
 # load Supido components
+require 'supido/abstract_interface'
 require 'supido/abstract_benchmark_base'
 require 'supido/tools/apache_benchmark'
 require 'supido/config'
