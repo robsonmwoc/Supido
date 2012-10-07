@@ -75,10 +75,6 @@ module Supido
         action.report!
       end
 
-      # Clear the ab logs
-      folder_path = File.join(Supido.config.log_path, Supido::Profile.name)
-      FileUtils.rm_r(folder_path, force: true) if File.exist?(folder_path)
-
     end
 
     private

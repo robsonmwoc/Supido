@@ -1,6 +1,5 @@
 module Supido
-  # TODO: Create a specific class on ApacheBenchmark module to handle report and
-  #       some specific accessors.
+  # TODO: Create a specific class on ApacheBenchmark module to handle report and some specific accessors.
   class ProfileAction
     attr_accessor :url, :concurrency, :requests, :attachment, :save_log, :auth
     attr_accessor :command, :post_data, :verbosity, :time
@@ -49,6 +48,7 @@ module Supido
 
       raise "Failed to read the document" if @document.empty?
 
+      # TODO: move this logic to the benchmark tool object
       # Needs to treat connection fails and incomplete tests.
       is_completed = @document.grep(/(\.\.done)/).any?
 
